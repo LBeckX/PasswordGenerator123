@@ -1,0 +1,339 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'Roboto', sans-serif !important;
+    outline: none !important;
+    color: #111;
+}
+html{
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    font-size: 20px;
+}
+body{
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    overflow: hidden;
+    background-size: cover;
+}
+
+a{
+    color: #111;
+}
+
+ul{
+    padding: 0 0 0 25px;
+}
+
+.white{
+    color: white;
+}
+
+#LEFT,#RIGHT{
+    width: 50%;
+    height: 100.1%;
+    max-height: 100%;
+    padding: 20px 3%;
+    box-sizing: border-box;
+    overflow-y: auto;
+}
+
+#LEFT{
+    background-color: rgba(33,33,33,.95);
+}
+
+#RIGHT{
+    background-color: rgba(232,65,92,.95);
+    padding-top: 60px;
+}
+
+#HEADER{
+    margin-bottom: 20px;
+}
+
+#HEADER h1{
+    color: #fff;
+}
+
+form{
+    width: 100%;
+}
+
+label{
+    display: block;
+    font-size: 20px;
+    width: 100%;
+}
+
+.form_input,.form_output{
+    width: 100%;
+    margin: 0 0 20px 0;
+}
+
+input,select{
+    width: 50%;
+    height: 40px;
+    padding: 0 15px;
+    font-size: 20px;
+    box-sizing: border-box;
+    text-transform:uppercase;
+    background-color: rgba(255,255,255,.95);
+    border:0;
+}
+input:active,input:focus,input:hover,select:active,select:focus,select:hover{
+    background-color: rgba(255,255,255,1);
+}
+
+input[type='checkbox']{
+    width: 20px;
+    height: 20px;
+    display: inline-block;
+    margin: 5px 0;
+}
+
+
+.inputInLine{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content:flex-start;
+}
+
+.inputInLine .form_input{
+    width: auto;
+}
+
+.inputInLine .form_input label{
+    width: auto;
+
+}
+
+#BOX{
+    width: 100%;
+    height: auto;
+    background-color: #fff;
+    position: relative;
+    padding: 10px 0;
+    max-height: 80%;
+    overflow-y: auto;
+}
+
+#BOX .fielset{
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction:row;
+    margin:20px 10px;
+    background-color: rgba(255,0,110,.9);
+    transition:background-color .2s;
+    -webkit-transition:background-color .2s;
+}
+#BOX .fielset:hover{
+    background-color: rgba(150,0,110,1);
+    cursor: pointer;
+}
+#BOX .fielset .id{
+    margin: 7px;
+    cursor: pointer;
+}
+#BOX .fielset input[type="checkbox"]{
+    margin: 10px;
+    cursor: pointer;
+}
+#BOX .fielset label{
+    width: 100%;
+    text-transform:none;
+    background:none;
+    padding: 7px;
+    color: #fff;
+    cursor: pointer;
+}
+
+#OUTPUT_MSG{
+    position: fixed;
+    top:50%;
+    left: 30%;
+    width: 40%;
+    max-height: 0;
+    margin: -50px 0 0 0;
+    background-color: antiquewhite;
+    overflow: hidden;
+    text-align: center;
+    padding: 0;
+    box-sizing:border-box;
+    transition:all .2s;
+    -webkit-transition:all .2s;
+    opacity: 0;
+    font-size: 30px;
+}
+
+#OUTPUT_MSG.open{
+    min-height: 70px;
+    max-height: 1000px;
+    padding: 20px 0;
+    opacity: 1;
+}
+
+button{
+    min-width: 200px;
+    padding: 5px 15px;
+    font-size: 20px;
+    border: 1px solid #fff;
+    color: #fff;
+    margin: 20px 20px 20px 0;
+    background-color: rgba(255,255,255,0);
+    cursor: pointer;
+    display: inline-block;
+    text-transform:uppercase;
+    transition: all .1s;
+}
+button:hover{
+    background-color: rgba(255,255,255,.05);
+}
+
+#OPEN_INFO{
+    position: fixed;
+    right: 0;
+    bottom: 0;
+}
+
+#INFO_BOX{
+    position: fixed;
+    top: 25%;
+    left: 20%;
+    width: 60%;
+    max-height: 0;
+    overflow: hidden;
+    box-sizing: border-box;
+    transition: all .3s;
+}
+
+#INFO_BOX.open{
+    max-height: 100%;
+}
+
+#INFO_BOX .head{
+    color: #fff;
+}
+
+#INFO_BOX .mid{
+    background-color: rgba(33,33,33,.95);
+    display: flex;
+    flex-direction: row;
+    border: 1px solid #fff;
+}
+
+#INFO_BOX .mid div{
+    height: 300px;
+    width: 25%;
+    flex-grow: 1;
+    flex-basis: auto;
+}
+
+#INFO_BOX a{
+    color: #fff;
+    text-decoration: none;
+}
+
+#INFO_BOX .mid div a{
+    display: block;
+    width: 100%;
+    height: 100%;
+    transition: background .2s;
+}
+
+#INFO_BOX .mid .fb a{
+    background: #3B5998 url("/files/img/facebook-logo.png") no-repeat center center;
+    background-size: 70% auto;
+}
+
+#INFO_BOX .mid .fb a:hover{
+    background-size: 80% auto;
+}
+
+#INFO_BOX .mid .github a{
+    background: #24292E url("/files/img/github-logo.png") no-repeat center center;
+    background-size: 60% auto;
+}
+
+#INFO_BOX .mid .github a:hover{
+    background-size: 70% auto;
+}
+
+#INFO_BOX .mid .homepage a{
+    background: #3F3F3F url("/files/img/UG_LOGO.png") no-repeat center center;
+    background-size: 60% auto;
+}
+
+#INFO_BOX .mid .homepage a:hover{
+    background-size: 70% auto;
+}
+
+#INFO_BOX .mid .homepage2 a{
+    background: #011E26 url("/files/img/logo_wif.png") no-repeat center center;
+    background-size: 60% auto;
+}
+
+#INFO_BOX .mid .homepage2 a:hover{
+    background-size: 70% auto;
+}
+
+#INFO_BOX .footer{
+    color: #fff;
+}
+
+
+.closeButton{
+    position: absolute;
+    top: 35px;
+    right: 10px;
+    width: 30px;
+    height: 30px;
+    box-sizing: border-box;
+    border: 1px solid rgba(255,255,255,.9);
+    background-color: rgba(255,255,255,0);
+    font-size: 23px;
+    text-align: center;
+    cursor: pointer;
+    color: #fff;
+    transition: background .2s;
+}
+
+.closeButton:hover{
+    background-color: rgba(255,255,255,.3);
+}
+
+@media (max-width:1000px){
+    input,textarea,label,select{
+        width: 100%;
+        max-width: 100%;
+    }
+    #INFO_BOX{
+        width: 90%;
+        left: 5%;
+    }
+}
+
+
+::-webkit-scrollbar {
+    width: 5px;
+    height: 5px;
+}
+::-webkit-scrollbar-thumb {
+    background: #267F67;
+    border-radius: 50px;
+}
+::-webkit-scrollbar-thumb:active {
+    background: #267F67;
+}
+::-webkit-scrollbar-track {
+    background: rgba(0,0,0,0);
+}
+::-webkit-scrollbar-corner {
+    background: transparent;
+}
