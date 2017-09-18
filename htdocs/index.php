@@ -47,47 +47,69 @@
 <div id="RIGHT" class="infoBoxClose">
     <form id="GENERATOR_FORM">
 
-        <div class="form_input">
-            <label for="INPUT_PASSWORD_NUMBERS">Number of passwords</label>
-            <select id="INPUT_PASSWORD_NUMBERS" name="inputPasswordNumbers" size="1">
-                <option value="1">1</option>
-                <option value="4">4</option>
-                <option value="10">10</option>
-                <option value="20">20</option>
-                <option value="50">50</option>
-                <option value="100">100</option>
-                <option value="200">200</option>
-            </select>
+        <div class="together">
+            <div class="form_input">
+                <label for="INPUT_PASSWORD_NUMBERS">Number of passwords</label>
+                <select id="INPUT_PASSWORD_NUMBERS" name="inputPasswordNumbers" size="1">
+                    <option value="1">1</option>
+                    <option value="4">4</option>
+                    <option value="10">10</option>
+                    <option value="20">20</option>
+                    <option value="50">50</option>
+                    <option value="100">100</option>
+                    <option value="200">200</option>
+                </select>
+            </div>
         </div>
 
-        <div class="form_input checkbox">
-            <label for="INPUT_LOWERCASE_LETTERS">Allow lowercase letters [abcdefghijklmnopqrstuvwxyz]</label>
-            <input type="checkbox" name="inputLowercaseLetters" id="INPUT_LOWERCASE_LETTERS">
+        <div class="together">
+            <div class="form_input checkbox">
+                <input type="checkbox" name="inputLowercaseLetters" id="INPUT_LOWERCASE_LETTERS">
+                <label for="INPUT_LOWERCASE_LETTERS">Lowercase letters</label>
+            </div>
+
+            <div class="form_input">
+                <label for="INPUT_ALLOWED_LOWERCASE_LETTERS">Allowed lowercase letters[abcdefghjkmnpqrstuvwxyz]</label>
+                <input type="text" name="inputAllowedLowercaseLetters" id="INPUT_ALLOWED_LOWERCASE_LETTERS" placeholder="abcdefghjkmnopqrstuvwxyz">
+            </div>
         </div>
 
-        <div class="form_input checkbox">
-            <label for="INPUT_UPPERCASE_LETTERS">Allow uppercase letters [ABCDEFGHIJKLMNOPQRSTUVWXYZ]</label>
-            <input type="checkbox" name="inputUppercaseLetters" id="INPUT_UPPERCASE_LETTERS">
+        <div class="together">
+            <div class="form_input checkbox">
+                <input type="checkbox" name="inputUppercaseLetters" id="INPUT_UPPERCASE_LETTERS">
+                <label for="INPUT_UPPERCASE_LETTERS">Uppercase letters</label>
+            </div>
+
+            <div class="form_input">
+                <label for="INPUT_ALLOWED_UPPERCASE_LETTERS">Allowed uppercase letters [ABCDEFGHIJKLMNPQRSTUVWXYZ]</label>
+                <input type="text" name="inputAllowedUppercaseLetters" id="INPUT_ALLOWED_UPPERCASE_LETTERS" placeholder="ABCDEFGHIJKLMNOPQRSTUVWXYZ">
+            </div>
         </div>
 
-        <div class="form_input checkbox">
-            <label for="INPUT_NUMBERS_LETTER">Allow numbers [1234567890]</label>
-            <input type="checkbox" name="inputNumbersLetters" id="INPUT_NUMBERS_LETTER">
+        <div class="together">
+            <div class="form_input checkbox">
+                <input type="checkbox" name="inputNumbersLetters" id="INPUT_NUMBERS_LETTER">
+                <label for="INPUT_NUMBERS_LETTER">Numbers [1234567890]</label>
+            </div>
         </div>
 
-        <div class="form_input checkbox">
-            <label for="INPUT_SPECIAL_CHARACTER">Allow special character</label>
-            <input type="checkbox" name="inputSpecialCharacter" id="INPUT_SPECIAL_CHARACTER">
+        <div class="together">
+            <div class="form_input checkbox">
+                <input type="checkbox" name="inputSpecialCharacter" id="INPUT_SPECIAL_CHARACTER">
+                <label for="INPUT_SPECIAL_CHARACTER">Special character</label>
+            </div>
+
+            <div class="form_input">
+                <label for="INPUT_ALLOW_SPECIAL_CHARACTER">Allow special character [!?@(){}[]\/=~$%&#*-+.,_]</label>
+                <input type="text" name="inputAllowSpecialCharacter" id="INPUT_ALLOW_SPECIAL_CHARACTER" placeholder="!?@(){}[]\/=~$%&#*-+.,_" maxlength="50">
+            </div>
         </div>
 
-        <div class="form_input">
-            <label for="INPUT_ALLOW_SPECIAL_CHARACTER">Allow special character [!?@(){}[]\/=~$%&#*-+.,_]</label>
-            <input type="text" name="inputAllowSpecialCharacter" id="INPUT_ALLOW_SPECIAL_CHARACTER" placeholder="!?@(){}[]\/=~$%&#*-+.,_" maxlength="50">
-        </div>
-
-        <div class="form_input">
-            <label for="INPUT_PASSWORD_LENGTH">Password length</label>
-            <input type="text" name="inputPasswordLength" id="INPUT_PASSWORD_LENGTH" placeholder="8" maxlength="10">
+        <div class="together">
+            <div class="form_input">
+                <label for="INPUT_PASSWORD_LENGTH">Password length</label>
+                <input type="text" name="inputPasswordLength" id="INPUT_PASSWORD_LENGTH" placeholder="8" maxlength="10">
+            </div>
         </div>
     </form>
     <div class="option_present">

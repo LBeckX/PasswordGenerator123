@@ -2,16 +2,20 @@
 var outputHtml = "",
     inputPasswordNumbers = "4",
     inputLowercaseLetters = true,
+    inputAllowedLowercaseLetters = "abcdefghjkmnpqrstuvwxyz",
     inputUppercaseLetters = true,
+    inputAllowedUppercaseLetters = "ABCDEFGHIJKLMNPQRSTUVWXYZ",
     inputNumbersLetters = true,
     inputSpecialCharacter = false,
-    inputAllowSpecialCharacter = "!?@(){}[]\/=~$%&#*-+.,_",
+    inputAllowSpecialCharacter = "_-",
     inputPasswordLength = "10",
 
 /*Elements*/
     inputElementPasswordNumbers,
     inputElementLowercaseLetters,
+    INPUT_ALLOWED_LOWERCASE_LETTERS,
     inputElementUppercaseLetters,
+    INPUT_ALLOWED_UPPERCASE_LETTERS,
     inputElementNumberLetters,
     inputElementSpecialCharacter,
     inputElementAllowSpecialCharacter,
@@ -33,7 +37,9 @@ document.addEventListener("DOMContentLoaded", function () {
 function getElements() {
     inputElementPasswordNumbers=document.getElementById("INPUT_PASSWORD_NUMBERS");
     inputElementLowercaseLetters=document.getElementById("INPUT_LOWERCASE_LETTERS");
+    INPUT_ALLOWED_LOWERCASE_LETTERS=document.getElementById("INPUT_ALLOWED_LOWERCASE_LETTERS");
     inputElementUppercaseLetters=document.getElementById("INPUT_UPPERCASE_LETTERS");
+    INPUT_ALLOWED_UPPERCASE_LETTERS=document.getElementById("INPUT_ALLOWED_UPPERCASE_LETTERS");
     inputElementNumberLetters=document.getElementById("INPUT_NUMBERS_LETTER");
     inputElementSpecialCharacter=document.getElementById("INPUT_SPECIAL_CHARACTER");
     inputElementAllowSpecialCharacter=document.getElementById("INPUT_ALLOW_SPECIAL_CHARACTER");
@@ -73,8 +79,14 @@ function addModifiedInput(){
         case "inputLowercaseLetters":
             inputLowercaseLetters = this.checked;
             break;
+        case "inputAllowedLowercaseLetters":
+            inputAllowedLowercaseLetters = this.value;
+            break;
         case "inputUppercaseLetters":
             inputUppercaseLetters = this.checked;
+            break;
+        case "inputAllowedUppercaseLetters":
+            inputAllowedUppercaseLetters = this.value;
             break;
         case "inputNumbersLetters":
             inputNumbersLetters = this.checked;
@@ -101,7 +113,9 @@ function recreatePasswords() {
 function updateInput() {
     inputElementPasswordNumbers.value = inputPasswordNumbers;
     inputElementLowercaseLetters.checked = inputLowercaseLetters;
+    INPUT_ALLOWED_LOWERCASE_LETTERS.value = inputAllowedLowercaseLetters;
     inputElementUppercaseLetters.checked = inputUppercaseLetters;
+    INPUT_ALLOWED_UPPERCASE_LETTERS.value = inputAllowedUppercaseLetters;
     inputElementNumberLetters.checked = inputNumbersLetters;
     inputElementSpecialCharacter.checked = inputSpecialCharacter;
     inputElementAllowSpecialCharacter.value = inputAllowSpecialCharacter;
@@ -122,14 +136,12 @@ function upadteOutputText() {
 
 function createPassword() {
     var pwdChars = "";
-    var lowercaseLetters = "abcdefghijklmnopqrstuvwxyz";
-    var uppercaseLetters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
     var numbersLetters = "1234567890";
     if(inputLowercaseLetters){
-        pwdChars += lowercaseLetters;
+        pwdChars += inputAllowedLowercaseLetters;
     }
     if(inputUppercaseLetters){
-        pwdChars += uppercaseLetters;
+        pwdChars += inputAllowedUppercaseLetters;
     }
     if(inputNumbersLetters){
         pwdChars += numbersLetters;
@@ -140,7 +152,7 @@ function createPassword() {
     if(pwdChars === ""){
         addRemoveClass(outputTextMSG,"open",1000);
         outputTextMSG.innerText = "Use lowercase letters as default...";
-        pwdChars = lowercaseLetters;
+        pwdChars = "abcdefghjkmnpqrstuvwxyz";
     }
     var pwd = "";
     var pwdCharsArray = pwdChars.split("");

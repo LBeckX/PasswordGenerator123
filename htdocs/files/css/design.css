@@ -50,7 +50,7 @@ ul{
 
 #RIGHT{
     background-color: rgba(232,65,92,.95);
-    padding-top: 60px;
+    padding-top: 110px;
 }
 
 #HEADER{
@@ -71,9 +71,15 @@ label{
     width: 100%;
 }
 
+.together{
+    padding: 10px 20px;
+    background-color: rgba(255,255,255,.1);
+    margin: 10px 0;
+}
+
 .form_input,.form_output{
     width: 100%;
-    margin: 0 0 20px 0;
+    margin: 10px 0;
 }
 
 input,select{
@@ -82,7 +88,6 @@ input,select{
     padding: 0 15px;
     font-size: 20px;
     box-sizing: border-box;
-    text-transform:uppercase;
     background-color: rgba(255,255,255,.95);
     border:0;
 }
@@ -94,9 +99,14 @@ input[type='checkbox']{
     width: 20px;
     height: 20px;
     display: inline-block;
-    margin: 5px 0;
+    margin: 5px 10px 5px 0;
 }
 
+.checkbox{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+}
 
 .inputInLine{
     display: flex;
@@ -117,9 +127,10 @@ input[type='checkbox']{
 #BOX{
     width: 100%;
     height: auto;
-    background-color: #fff;
+    background-color: rgba(0,255,255,.1);
     position: relative;
-    padding: 10px 0;
+    padding: 0 10px;
+    margin: 10px 0;
     max-height: 80%;
     overflow-y: auto;
 }
@@ -129,12 +140,12 @@ input[type='checkbox']{
     flex-wrap: nowrap;
     flex-direction:row;
     margin:20px 10px;
-    background-color: rgba(255,0,110,.9);
+    background-color: rgba(255,0,110,.7);
     transition:background-color .2s;
     -webkit-transition:background-color .2s;
 }
 #BOX .fielset:hover{
-    background-color: rgba(150,0,110,1);
+    background-color: rgba(255,0,110,.9);
     cursor: pointer;
 }
 #BOX .fielset .id{
