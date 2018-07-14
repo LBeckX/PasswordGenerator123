@@ -31,10 +31,10 @@
     <meta property="og:description" content="Create your own password fast and safe with html5">
     <meta property="og:type"   content="website">
     <?php
-    echo "<style>";
-    echo preg_replace('/\s+/', " ",file_get_contents(__DIR__."/files/css/design.css"));
-    echo preg_replace('/\s+/', " ",file_get_contents("https://fonts.googleapis.com/css?family=Roboto:300,300i"));
-    echo "</style>";
+        echo "<style>";
+        echo preg_replace('/\s+/', " ",file_get_contents(__DIR__."/files/css/design.css"));
+        echo preg_replace('/\s+/', " ",file_get_contents("https://fonts.googleapis.com/css?family=Roboto:300,300i"));
+        echo "</style>";
     ?>
 </head>
 <body>
@@ -49,8 +49,8 @@
 
         <div class="together">
             <div class="form_input">
-                <label for="INPUT_NUMBERS_PASSWORD">Number of passwords</label>
-                <select id="INPUT_NUMBERS_PASSWORD" name="inputNumbersPassword" size="1">
+                <label for="INPUT_PASSWORD_NUMBERS">Number of passwords</label>
+                <select id="INPUT_PASSWORD_NUMBERS" name="inputPasswordNumbers" size="1">
                     <option value="1">1</option>
                     <option value="4">4</option>
                     <option value="10">10</option>
@@ -62,58 +62,53 @@
             </div>
         </div>
 
-        <div class="together" id="LOW_LETTERS">
+        <div class="together">
             <div class="form_input checkbox">
-                <input type="checkbox" name="lowLetters" id="ALLOW_LOW_LETTERS">
-                <label for="ALLOW_LOW_LETTERS">Lowercase letters</label>
+                <input type="checkbox" name="inputLowercaseLetters" id="INPUT_LOWERCASE_LETTERS">
+                <label for="INPUT_LOWERCASE_LETTERS">Lowercase letters</label>
             </div>
 
             <div class="form_input">
-                <label for="INPUT_LOW_LETTERS">Allowed lowercase letters [abcdefghjkmnpqrstuvwxyz]</label>
-                <input type="text" name="inputLowLetters" id="INPUT_LOW_LETTERS" placeholder="abcdefghjkmnopqrstuvwxyz">
+                <label for="INPUT_ALLOWED_LOWERCASE_LETTERS">Allowed lowercase letters[abcdefghjkmnpqrstuvwxyz]</label>
+                <input type="text" name="inputAllowedLowercaseLetters" id="INPUT_ALLOWED_LOWERCASE_LETTERS" placeholder="abcdefghjkmnopqrstuvwxyz">
             </div>
         </div>
 
-        <div class="together" id="UPPER_LETTERS">
+        <div class="together">
             <div class="form_input checkbox">
-                <input type="checkbox" name="upperLatters" id="ALLOW_UPPER_LETTERS">
-                <label for="ALLOW_UPPER_LETTERS">Uppercase letters</label>
+                <input type="checkbox" name="inputUppercaseLetters" id="INPUT_UPPERCASE_LETTERS">
+                <label for="INPUT_UPPERCASE_LETTERS">Uppercase letters</label>
             </div>
 
             <div class="form_input">
-                <label for="INPUT_UPPER_LETTERS">Allowed uppercase letters [ABCDEFGHIJKLMNPQRSTUVWXYZ]</label>
-                <input type="text" name="inputUpperLetters" id="INPUT_UPPER_LETTERS" placeholder="ABCDEFGHIJKLMNOPQRSTUVWXYZ">
+                <label for="INPUT_ALLOWED_UPPERCASE_LETTERS">Allowed uppercase letters [ABCDEFGHIJKLMNPQRSTUVWXYZ]</label>
+                <input type="text" name="inputAllowedUppercaseLetters" id="INPUT_ALLOWED_UPPERCASE_LETTERS" placeholder="ABCDEFGHIJKLMNOPQRSTUVWXYZ">
             </div>
         </div>
 
-        <div class="together" id="NUMBERS">
+        <div class="together">
             <div class="form_input checkbox">
-                <input type="checkbox" name="numbers" id="ALLOW_NUMBERS">
-                <label for="ALLOW_NUMBERS">Numbers</label>
+                <input type="checkbox" name="inputNumbersLetters" id="INPUT_NUMBERS_LETTER">
+                <label for="INPUT_NUMBERS_LETTER">Numbers [1234567890]</label>
+            </div>
+        </div>
+
+        <div class="together">
+            <div class="form_input checkbox">
+                <input type="checkbox" name="inputSpecialCharacter" id="INPUT_SPECIAL_CHARACTER">
+                <label for="INPUT_SPECIAL_CHARACTER">Special character</label>
             </div>
 
             <div class="form_input">
-                <label for="INPUT_NUMBERS">Allowed numbers [1234567890]</label>
-                <input type="text" name="inputNumbers" id="INPUT_NUMBERS" placeholder="1234567890">
+                <label for="INPUT_ALLOW_SPECIAL_CHARACTER">Allow special character [!?@(){}[]\/=~$%&#*-+.,_]</label>
+                <input type="text" name="inputAllowSpecialCharacter" id="INPUT_ALLOW_SPECIAL_CHARACTER" placeholder="!?@(){}[]\/=~$%&#*-+.,_" maxlength="50">
             </div>
         </div>
 
-        <div class="together" id="SPECIAL_CHARACTER">
-            <div class="form_input checkbox">
-                <input type="checkbox" name="specialCharacter" id="ALLOW_SPECIAL_CHARACTER">
-                <label for="ALLOW_SPECIAL_CHARACTER">Special character</label>
-            </div>
-
-            <div class="form_input">
-                <label for="INPUT_SPECIAL_CHARACTER">Allow special character [!?@(){}[]\/=~$%&#*-+.,_]</label>
-                <input type="text" name="inputSpecialCharacter" id="INPUT_SPECIAL_CHARACTER" placeholder="!?@(){}[]=$%&#*-+.,_">
-            </div>
-        </div>
-
-        <div class="together" id="PASSWORD_LENGTH">
+        <div class="together">
             <div class="form_input">
                 <label for="INPUT_PASSWORD_LENGTH">Password length</label>
-                <input type="text" name="inputPasswordLength" id="INPUT_PASSWORD_LENGTH" placeholder="10">
+                <input type="text" name="inputPasswordLength" id="INPUT_PASSWORD_LENGTH" placeholder="8" maxlength="10">
             </div>
         </div>
     </form>
@@ -148,11 +143,10 @@
 </div>
 </body>
 <?php
-//echo "<script type=\"text/javascript\">";
-//echo preg_replace('/\s+/', " ",file_get_contents(__DIR__."/files/js/dev.generate.js"));
-//echo "</script>"
+echo "<script type=\"text/javascript\">";
+echo preg_replace('/\s+/', " ",file_get_contents(__DIR__."/files/js/generate.js"));
+echo "</script>"
 ?>
-<script src="/files/js/dev.generate.js"></script>
 <style>
     body{
         background: #292929 url("/files/img/background_web.jpg") no-repeat scroll center center;

@@ -21,6 +21,7 @@ body{
     flex-wrap: nowrap;
     overflow: hidden;
     background-size: cover;
+    background: #292929 url("/files/img/background_web.jpg") no-repeat scroll center center;
 }
 
 a{
@@ -63,6 +64,7 @@ ul{
 
 form{
     width: 100%;
+    margin: 0 0 50px 0;
 }
 
 label{
@@ -207,7 +209,7 @@ button:hover{
     background-color: rgba(255,255,255,.05);
 }
 
-#OPEN_INFO{
+.option_present{
     position: fixed;
     right: 0;
     bottom: 0;
